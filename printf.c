@@ -17,8 +17,8 @@ int _printf(const char *format, ...)
 	int i;
 	char c;
 	char *s;
-	int d, ii;
-
+	int d, ii, sum = 0;
+ 
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -28,28 +28,32 @@ int _printf(const char *format, ...)
 			if (format[i] == 'c')
 			{
 				c = va_arg(args, int);
-				print_char(c);
+				sum += print_char(c);
 			}
 			else if (format[i] == 's')
 			{
 				s = va_arg(args, char *);
-				print_string(c);
+				sum += print_string(c);
 			}
 			else if (format[i] == '%')
 			{
-				print_char('%');
+				sum += print_char('%');
 			}
 			else if (format[i] == 'd')
 			{
 				d = va_arg(args, int);
-				print_integer(d);
+				sum += print_integer(d);
 			}
 			else if (format[i] == 'i')
 			{
 				ii = va_arg(args, int);
-				handle_i(ii);
+				sum += handle_i(ii);
 			}
 		} else
-			print_char(format[i]);
+			sum += print_char(format[i]);
 	}
+	va_end(args);
+	return (sum);
 }
+
+

@@ -105,7 +105,7 @@ int to_decimal(int number, int flag)
   * @number: the number handled
   * Return: void
   */
-void handle_i(int number)
+int handle_i(int number)
 {
-	;
+	return (number);
 }

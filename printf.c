@@ -1,5 +1,4 @@
 #include "main.h"
-#include <cstdio>
 /**
  * _printf - Custom printf function
  * @format: Pointer to a constant format string

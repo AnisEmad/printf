@@ -1,5 +1,15 @@
 #include "main.h"
 /**
+ *print_normal-print percent at other charecter
+ * @c:character printed
+ * return: int 
+ **/
+int print_normal(char c)
+{
+	print_char('%');
+	return (print_char(c) + 1);
+}	
+/**
  * handle -handle specifier
  * @p:decision parameter
  * return : numbers of characters
@@ -39,10 +49,7 @@ int handle(const char *format, va_list args)
 				sum += handle_i(i);
 			}
 			else
-			{
-				sum += print_char('%');
-				sum += print_char(*format);
-			}
+			       print_normal(*format);
 		}
 		else
 			sum += print_char(*format);

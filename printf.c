@@ -1,18 +1,19 @@
 #include "main.h"
 /**
- *print_normal-print percent at other charecter
+ * print_normal-print percent at other charecter
  * @c:character printed
- * return: int 
+ * Return: int
  **/
 int print_normal(char c)
 {
 	print_char('%');
 	return (print_char(c) + 1);
-}	
+}
 /**
  * handle -handle specifier
- * @p:decision parameter
- * return : numbers of characters
+ * @args:decision parameter
+ * @format: string
+ * Return: numbers of characters
  **/
 int handle(const char *format, va_list args)
 {

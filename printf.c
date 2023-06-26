@@ -1,5 +1,39 @@
 #include "main.h"
 /**
+ * handle -handle specifier 
+ * @p:decision parameter
+ * return : numbers of characters
+ **/
+int handle(char p)
+{ 
+	int sum = 0;
+                        if (p == 'c')
+                        {
+                                c = va_arg(args, int);
+                                sum += print_char(c);
+                        }
+                        else if (p == 's')
+                        {
+                                s = va_arg(args, char *);
+                                sum += print_string(s);
+                        }
+                        else if (p == '%')
+                        {
+                                sum += print_char('%');
+                        }
+                        else if (p == 'd')
+                        {
+                                d = va_arg(args, int);
+                                sum += print_integer(d);
+                        }
+                        else if (p == 'i')
+                        {
+                                ii = va_arg(args, int);
+				       sum += handle_i(ii);
+                        }
+			return (sum);
+}
+/**
  * _printf - Custom printf function
  * @format: Pointer to a constant format string
  *
@@ -16,6 +50,11 @@ int _printf(const char *format, ...)
 	int i;
 	char c, *s;
 	int d, ii, sum = 0;
+                    
+	if (!format)
+	{
+		return (-1);
+	}
 
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
@@ -23,30 +62,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			if (format[i] == 'c')
-			{
-				c = va_arg(args, int);
-				sum += print_char(c);
-			}
-			else if (format[i] == 's')
-			{
-				s = va_arg(args, char *);
-				sum += print_string(s);
-			}
-			else if (format[i] == '%')
-			{
-				sum += print_char('%');
-			}
-			else if (format[i] == 'd')
-			{
-				d = va_arg(args, int);
-				sum += print_integer(d);
-			}
-			else if (format[i] == 'i')
-			{
-				ii = va_arg(args, int);
-				sum += handle_i(ii);
-			}
+			sum += handle(format[i];
 		} else
 			sum += print_char(format[i]);
 	}

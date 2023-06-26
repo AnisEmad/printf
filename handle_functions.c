@@ -18,6 +18,11 @@ int print_string(char *s)
 {
 	int i = 0;
 	int sum = 0;
+	
+	if (!s)
+	{
+		return (print_string("(null)"));
+	}
 
 	while (s[i] != '\0')
 	{

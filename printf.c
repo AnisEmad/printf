@@ -38,6 +38,11 @@ int handle(const char *format, va_list args)
 				i = va_arg(args, int);
 				sum += handle_i(i);
 			}
+			else
+			{
+				sum += print_char('%');
+				sum += print_char(*format);
+			}
 		}
 		else 
 			sum += print_char(*format);

@@ -5,11 +5,11 @@
  * return : numbers of characters
  **/
 int handle(const char *format, va_list args)
-{ 
+{
 	int sum = 0, i, d;
 	char c, *s;
-	
-	while(*format != '\0')
+
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
@@ -44,7 +44,7 @@ int handle(const char *format, va_list args)
 				sum += print_char(*format);
 			}
 		}
-		else 
+		else
 			sum += print_char(*format);
 		format++;
 	}
@@ -65,7 +65,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int sum = 0;
-                    
+
 	if (!format)
 	{
 		return (-1);

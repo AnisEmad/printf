@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 	}
 
 	va_start(args, format);
-	handle(format, args);
+	sum += handle(format, args);
 	va_end(args);
 	return (sum);
 }

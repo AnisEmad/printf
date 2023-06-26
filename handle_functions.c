@@ -12,7 +12,7 @@ int print_char(char c)
 /**
   * print_string - print a string
   * @s: pointer to a string
-  * Return: void
+  * Return: int
   */
 int print_string(char *s)
 {
@@ -31,15 +31,15 @@ int print_string(char *s)
 /**
   * print_integer - print a decimal number
   * @number: number used
-  * Return: void
+  * Return: int
   */
-void print_integer(int number)
+int print_integer(int number)
 {
 	char buffer[20];
 	int length = 0;
 	int temp = number;
 	int is_negative = 0;
-	int i;
+	int i, sum = 0;
 
 	if (temp == 0)
 	{
@@ -54,6 +54,7 @@ void print_integer(int number)
 	{
 		buffer[length++] = '0' + (temp % 10);
 		temp /= 10;
+		sum++;
 	}
 
 	if (is_negative)
@@ -69,6 +70,7 @@ void print_integer(int number)
 	}
 
 	write(STDOUT_FILENO, buffer, length);
+	return (sum);
 }
 /**
   * to_decimal - converts the number to decimal

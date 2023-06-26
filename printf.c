@@ -15,10 +15,9 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	int i;
-	char c;
-	char *s;
+	char c, *s;
 	int d, ii, sum = 0;
- 
+
 	va_start(args, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{

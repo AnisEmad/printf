@@ -2,28 +2,31 @@
 /**
   * print_char - print a single character
   * @c: the character used
-  * Return: void
+  * Return: int
   */
-void print_char(char c)
+int print_char(char c)
 {
 	write(STDOUT_FILENO, &c, 1);
+	return (1);
 }
 /**
   * print_string - print a string
   * @s: pointer to a string
   * Return: void
   */
-void print_string(char *s)
+int print_string(char *s)
 {
 	int i = 0;
+	int sum = 0;
 
 	while (s[i] != '\0')
 	{
 		char c = s[i];
 
-		print_char(c);
+		sum += print_char(c);
 		i++;
 	}
+	return (sum);
 }
 /**
   * print_integer - print a decimal number

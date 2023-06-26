@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 			{
 				s = va_arg(args, char *);
-				sum += print_string(c);
+				sum += print_string(s);
 			}
 			else if (format[i] == '%')
 			{

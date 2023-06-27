@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- *  test_1 -test for specifier 
+ *  test_1 -test for specifier
  *  @c: character
- *  @args: list of arguments 
+ *  @args: list of arguments
  *  Return: number of character printed
  **/
 int test_1(char c, va_list args)
@@ -11,34 +11,50 @@ int test_1(char c, va_list args)
 	char c2, *s;
 
 	if (c == 'c')
-	{	
-    		cc = va_arg(args, int);
-		sum += print_char(cc);
-	}	
+	{
+		c2 = va_arg(args, int);
+		sum += print_char(c2);
+	}
 	else if (c == 's')
 	{
-		 s = va_arg(args, char *);
-    		sum += print_string(s);
+		s = va_arg(args, char *);
+		sum += print_string(s);
 	}
 	else if (c == '%')
 	{
-    		sum += print_char('%');
+		sum += print_char('%');
 	}
 	else if (c == 'd')
 	{
-    		i = va_arg(args, int);
-    		sum += handle_i(i);
+		i = va_arg(args, int);
+		sum += handle_i(i);
 	}
 	else if (c == 'i')
 	{
-		 i = va_arg(args, int);
-		 sum += handle_i(i);
+		i = va_arg(args, int);
+		sum += handle_i(i);
 	}
 	else
 		return (test_2(c, args));
 	return (sum);
-	
+}
+/**
+  * test_2 - check specifer
+  * @c: character used
+  * @args: list of arguments
+  * Return: number of characters printed
+  */
+int test_2(char c, va_list args)
+{
+	unsigned int b;
+	int sum = 0;
 
-
-
-
+	if (c == 'b')
+	{
+		b = va_arg(args, int);
+		sum += print_b(b);
+	}
+	else
+		return (0);
+	return (sum);
+}

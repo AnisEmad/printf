@@ -21,4 +21,7 @@ int print_integer(int number);
 int handle_i(int n);
 int  print_string(char *s);
 int to_decimal(int number, int flag);
+int test_1(char c, va_list args);
+int test_2(char c, va_list args);
+int print_b(int n);
 #endif

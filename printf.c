@@ -21,39 +21,15 @@ int print_normal(char c)
  **/
 int handle(const char *format, va_list args)
 {
-	int sum = 0, i, d;
-	char c, *s;
+	int sum = 0;
 
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'c')
-			{
-				c = va_arg(args, int);
-				sum += print_char(c);
-			}
-			else if (*format == 's')
-			{
-				s = va_arg(args, char *);
-				sum += print_string(s);
-			}
-			else if (*format == '%')
-			{
-				sum += print_char('%');
-			}
-			else if (*format == 'd')
-			{
-				d = va_arg(args, int);
-				sum += handle_i(d);
-			}
-			else if (*format == 'i')
-			{
-				i = va_arg(args, int);
-				sum += handle_i(i);
-			}
-			else if (format)
+			sum += test_1(*format, args);
+			if (!sum && format)
 				sum += print_normal(*format);
 		}
 		else

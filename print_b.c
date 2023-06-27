@@ -4,7 +4,7 @@
   * @n: number used
   * Return: number of characters printed
   */
-int print_b(int n)
+int print_b(unsigned int n)
 {
 	char binary[32];
 	int index = 0, sum = 0, i;

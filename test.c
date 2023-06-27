@@ -60,6 +60,11 @@ int test_2(char c, va_list args)
 		s = va_arg(args, char *);
 		sum += print_reverse(s);
 	}
+	else if (c == 'R')
+	{
+		s = va_arg(args, char *);
+		sum += print_rot13(s);
+	}
 	else
 		return (0);
 	return (sum);

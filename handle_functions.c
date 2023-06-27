@@ -107,7 +107,7 @@ int to_decimal(int number, int flag)
 }
 /**
   * handle_i - handles numbers when it's i
-  * @number: the number handled
+  * @n: the number handled
   * Return: void
   */
 int handle_i(int n)

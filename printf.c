@@ -8,7 +8,7 @@ int print_normal(char c)
 {
 	if (c == '\0')
 	{
-		return (-1);		
+		return (-1);
 	}
 	print_char('%');
 	return (print_char(c) + 1);
@@ -54,7 +54,7 @@ int handle(const char *format, va_list args)
 				sum += handle_i(i);
 			}
 			else if (format)
-			       sum += print_normal(*format);
+				sum += print_normal(*format);
 		}
 		else
 			sum += print_char(*format);

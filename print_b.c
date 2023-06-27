@@ -9,6 +9,11 @@ int print_b(unsigned int n)
 	char binary[32];
 	int index = 0, sum = 0, i;
 
+	if (n == 0)
+	{
+		print_char('0');
+		return (1);
+	}
 	while (n > 0)
 	{
 		int remainder = n % 2;

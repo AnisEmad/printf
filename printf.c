@@ -46,7 +46,7 @@ int handle(const char *format, va_list args)
 			else if (*format == 'd')
 			{
 				d = va_arg(args, int);
-				sum += print_integer(d);
+				sum += handle_i(d);
 			}
 			else if (*format == 'i')
 			{

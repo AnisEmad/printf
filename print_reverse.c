@@ -15,7 +15,7 @@ int print_reverse(char *str)
 		i++;
 	}
 	str--;
-	while (i >= 0)
+	while (i > 0)
 	{
 		print_char(*str);
 		str--;

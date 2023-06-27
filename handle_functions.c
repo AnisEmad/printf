@@ -6,18 +6,7 @@
   */
 int print_char(char c)
 {
-	static char buf[1024];
-	static int i;
-	if (c == -1 || i >= 1024)
-	{
-		write(1, &buf, i);
-		i = 0;
-	}	
-	if (c != -1)
-	{
-		buf[i] = c;
-		i++;
-	}
+	write(STDOUT_FILENO, &c, 1);
 	return (1);
 }
 /**

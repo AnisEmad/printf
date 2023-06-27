@@ -5,6 +5,16 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <string.h>
+/**
+  * struct formats - use the right function
+  * @sp: the specifer
+  * @f: function
+  */
+typedef struct formats
+{
+	char sp;
+	int (*f)();
+} find_function;
 int _printf(const char *format, ...);
 int  print_char(char c);
 int print_integer(int number);

@@ -51,7 +51,7 @@ int test_2(char c, va_list args)
 
 	if (c == 'b')
 	{
-		b = va_arg(args, int);
+		b = va_arg(args,unsigned int);
 		sum += print_b(b);
 	}
 	else

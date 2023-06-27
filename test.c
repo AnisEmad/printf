@@ -48,11 +48,17 @@ int test_2(char c, va_list args)
 {
 	unsigned int b;
 	int sum = 0;
+	char *s;
 
 	if (c == 'b')
 	{
 		b = va_arg(args, unsigned int);
 		sum += print_b(b);
+	}
+	else if (c == 'r')
+	{
+		s = va_arg(args, char *);
+		sum += print_reverse(s);
 	}
 	else
 		return (0);

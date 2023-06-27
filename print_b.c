@@ -1,8 +1,8 @@
 #include "main.h"
 /**
   * print_b - print number in binray
-  * @b: number used
-  * REturn: number of characters printed
+  * @n: number used
+  * Return: number of characters printed
   */
 int print_b(int n)
 {
@@ -12,6 +12,7 @@ int print_b(int n)
 	while (n > 0)
 	{
 		int remainder = n % 2;
+
 		binary[index++] = remainder + '0';
 		n /= 2;
 		sum++;

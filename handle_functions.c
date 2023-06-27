@@ -110,7 +110,25 @@ int to_decimal(int number, int flag)
   * @number: the number handled
   * Return: void
   */
-int handle_i(int number)
+int handle_i(int n)
 {
-	return (number);
+	unsigned int num;
+	int count = 0;
+
+	if (n < 0)
+	{
+		count += print_char('-');
+		num = -n;
+	}
+	else
+	{
+		num = n;
+	}
+
+	if (num / 10)
+		count += handle_i(num / 10);
+
+	count += print_char('0' + (num % 10));
+
+	return (count);
 }

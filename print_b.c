@@ -6,7 +6,7 @@
   */
 int print_b(unsigned int n)
 {
-	char binary[32];
+	char binary[64];
 	int index = 0, sum = 0, i;
 
 	if (n == 0)
